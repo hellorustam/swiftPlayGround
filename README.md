@@ -1,1 +1,2 @@
 # swiftPlayGround
+new Class - Animal
