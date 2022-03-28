@@ -1,53 +1,92 @@
 import UIKit
 
-enum Color: String {
-    case red = "red"
-    case black = "black"
-    case yellow = "yellow"
-}
+//enum Color: String {
+//    case red = "red"
+//    case black = "black"
+//    case yellow = "yellow"
+//}
 
 class Animal {
     var weightMain: Int
-    var voice: String
-    var color: String
     
-    init(weight: Int, voice: String, color: String){
-        self.voice = voice
-        self.color = color
+    init(weight: Int){
         self.weightMain = weight
     }
     
-//    init(weight: Int){
-//        self.weightMain = weight
-//    }
+    func plusWeight(count: Int){
+        weightMain += count
+    }
     
-    func printWeight(text: String) {
-       print(weightMain)
-//       print(color)
+    static func printWeight(){
+        print("asdf")
+//        print(weightMain)
     }
 }
 
-class Cat: Animal{
-//    override init(weight: Int, voice: String, color: String) {
-//        super.init(weight: weight, voice: voice, color: color){
+//class Cat: Animal{
+//    init(weight: Int) {
+//        super.init(weight: weight){
 //            self.weight = weightMain + 1
 //        }
 //    }
+//
+//    func voiceCat(voice: String) {
+//        print(weightMain)
+//    }
+//}
+
+class Cat: Animal{
+//    override init(weight: Int) {
+//        super.init(weight: weight)
+//        plusWeight(count: 1)
+//    }
     
-//    weightMain += 1
-    
-    func voiceCat(voice: String) {
-        print("Cat say \(voice)")
+    init (weightCat: Int) {
+        super.init(weight: weightCat)
+        plusWeight(count: 1)
         print(weightMain)
     }
 }
 
 class Dog: Animal {
-    
+    init (weightDog: Int) {
+        super.init(weight: weightDog)
+        plusWeight(count: 3)
+        print(weightMain)
+    }
 }
 
-let cat1 = Cat(weight: 45, voice: "myau-myau", color: Color.yellow.rawValue)
-//let cat2 = Cat(weight: 45)
+let cat1 = Cat(weightCat: 45)
+let dog1 = Dog(weightDog: 77)
+
+//Animal.printWeight()
+
+// ----
 
 
-cat1.voiceCat(voice: "String")
+//class A {
+//  var a: Int
+//  init(a: Int) {
+//    self.a = a
+//  }
+//}
+//
+//class B: A {
+////  var b: Int
+//
+//  init(a:Int, b: Int){
+////    self.b = b
+//    super.init(a: a)
+//  }
+//
+////  override init(a: Int) {
+////    self.b = 0
+////    super.init(a: a)
+////  }
+//
+////  init(b: Int) {
+////    self.b = b
+////    super.init(a: 0)
+////  }
+//
+//}
